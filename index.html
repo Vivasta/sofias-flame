@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Flame — Дизайнерские свечи ручной работы</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Хедер -->
+    <header class="header">
+        <!-- Логотип -->
+        <a href="#" class="logo">Sofia Flame</a>
+
+        <!-- Десктопное меню -->
+        <nav class="menu">
+            <a href="#" class="active">Главная</a>
+            <a href="#">Коллекции</a>
+            <a href="#">О бренде</a>
+            <a href="#">Контакт</a>
+        </nav>
+
+        <!-- Бургер-иконка -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Мобильное меню -->
+        <nav class="menu-mobile" id="menu">
+            <a href="#" class="active">Главная</a>
+            <a href="#">Коллекции</a>
+            <a href="#">О бренде</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Слайдер -->
+    <section class="hero-slider">
+        <div class="slides">
+            <!-- Слайд 1 -->
+            <div class="slide active" style="background-image: url('https://images.pexels.com/photos/10956704/pexels-photo-10956704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="hero-content">
+                    <h1>Ручная работа с душой</h1>
+                    <p>Каждая свеча — уникальна. Сделана с любовью к деталям.</p>
+                    <a href="https://t.me/sofia_flame" class="btn" target="_blank">Смотреть в Telegram</a>
+                </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/935977/pexels-photo-935977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="hero-content">
+                    <h1>С природой в каждом элементе</h1>
+                    <p>Сухоцветы, минералы, эфирные масла — только натуральное.</p>
+                    <a href="https://t.me/sofia_flame" class="btn" target="_blank">Смотреть в Telegram</a>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+                <div class="hero-content">
+                    <h1>Создай атмосферу дома</h1>
+                    <p>Тёплый свет, приятный аромат, уют — начни с одной свечи.</p>
+                    <a href="https://t.me/sofia_flame" class="btn" target="_blank">Смотреть в Telegram</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Точки -->
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- О бренде -->
+    <section class="about animate">
+        <div class="about-img">
+            <img src="https://images.pexels.com/photos/10956704/pexels-photo-10956704.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" alt="Руки мастера за работой">
+        </div>
+        <div class="about-text">
+            <h2>О бренде</h2>
+            <p>«Sofia Flame» — это не просто свечи. Это ритуал, создание уюта, внимание к деталям. Каждая свеча отливаются вручную, с любовью к материалу и пространству.</p>
+            <p>Мы используем только натуральный соевый воск, хлопковые фитили и ароматы, которые не раздражают дыхание — только вдохновляют.</p>
+            <a href="https://t.me/sofia_flame" class="btn" target="_blank">Написать в Telegram</a>
+        </div>
+    </section>
+
+    <!-- Коллекции -->
+    <section class="collections animate">
+        <h2 class="section-title">Коллекции</h2>
+        <div class="collection-grid">
+            <div class="collection-item">
+                <img src="https://images.pexels.com/photos/1595381/pexels-photo-1595381.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Коллекция 'Лес'" class="collection-img">
+                <div class="collection-info">
+                    <h3>Лес</h3>
+                    <p>Запах сосны и хвои. Как прогулка в тайге.</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img src="https://images.pexels.com/photos/935977/pexels-photo-935977.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Коллекция 'Цветы'" class="collection-img">
+                <div class="collection-info">
+                    <h3>Цветы</h3>
+                    <p>Сушеные цветы внутри. Для весеннего настроения.</p>
+                </div>
+            </div>
+            <div class="collection-item">
+                <img src="https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Коллекция 'Минералы'" class="collection-img">
+                <div class="collection-info">
+                    <h3>Минералы</h3>
+                    <p>Кварц, аметист, малахит. Для энергии и покоя.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс -->
+    <section class="process animate">
+        <h2>Как это делается</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">🕯️</div>
+                <h3>Отливка</h3>
+                <p>Воск растапливается и заливается в форму вручную.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🌿</div>
+                <h3>Аромат</h3>
+                <p>Добавляются эфирные масла без синтетики.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🪨</div>
+                <h3>Декор</h3>
+                <p>Минералы, сухоцветы, текстуры — всё вручную.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer animate">
+        <h3>Sofia Flame</h3>
+        <p>Дизайнерские свечи ручной работы</p>
+        <div class="social-links">
+            <a href="https://t.me/sofia_flame" target="_blank">Telegram</a>
+            <a href="https://wa.me/79991234567" target="_blank">WhatsApp</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 14px; color: #777;">© 2025 Sofia Flame. Все свечи — ручная работа.</p>
+    </footer>
+
+    <!-- Подключаем скрипт -->
+    <script src="js/script.js"></script>
+</body>
+</html>
