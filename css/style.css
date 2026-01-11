@@ -561,3 +561,55 @@ body {
         right: 15px;
     }
 }
+/* === Логотип в шапке === */
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #1E1E1E;
+    text-align: center;
+}
+
+/* На мобильных — логотип крупнее, текст под ним */
+@media (max-width: 768px) {
+    .logo-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 4px;
+    }
+    .logo-text {
+        font-size: 14px;
+        display: block;
+    }
+}
+
+/* На десктопе — убираем текст рядом с логотипом, оставляем только под ним */
+.header .menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Убираем старый текст из меню — он теперь в логотипе */
+.header .logo {
+    display: none;
+}
