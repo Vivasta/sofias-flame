@@ -14,52 +14,50 @@
 <body>
 
     <!-- Хедер -->
-    <!-- Хедер -->
-<header class="header">
-    <!-- Центр: логотип + меню в строке -->
-    <div class="header-center">
-        <!-- Логотип -->
-        <a href="#" class="logo-wrapper">
-            <img src="images/logo1.png" alt="Sofia Flame" class="logo-img">
-            <span class="logo-text">Sofia's Flame</span>
-        </a>
+    <header class="header">
+        <!-- Центр: логотип + меню в строке -->
+        <div class="header-center">
+            <!-- Логотип -->
+            <a href="#" class="logo-wrapper">
+                <img src="images/logo1.png" alt="Sofia Flame" class="logo-img">
+                <span class="logo-text">Sofia's Flame</span>
+            </a>
 
-        <!-- Меню -->
-        <nav class="menu">
+            <!-- Меню -->
+            <nav class="menu">
+                <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
+                <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
+                <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
+                <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
+            </nav>
+        </div>
+
+        <!-- Кнопка языка — уедет вправо -->
+        <div class="language-selector">
+            <button id="lang-toggle" class="lang-toggle">🇷🇺</button>
+            <div id="lang-dropdown" class="lang-dropdown">
+                <button data-lang="ru">🇷🇺 Русский</button>
+                <button data-lang="en">🇬🇧 English</button>
+                <button data-lang="gr">🇬🇷 Ελληνικά</button>
+            </div>
+        </div>
+
+        <!-- Бургер -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Мобильное меню -->
+        <nav class="menu-mobile" id="menu">
+            <button class="close-menu" id="closeMenu">&times;</button>
             <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
             <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
             <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
             <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
         </nav>
-    </div>
-
-    <!-- Кнопка языка — уедет вправо -->
-    <div class="language-selector">
-        <button id="lang-toggle" class="lang-toggle">🇷🇺</button>
-        <div id="lang-dropdown" class="lang-dropdown">
-            <button data-lang="ru">🇷🇺 Русский</button>
-            <button data-lang="en">🇬🇧 English</button>
-            <button data-lang="gr">🇬🇷 Ελληνικά</button>
-        </div>
-    </div>
-
-    <!-- Бургер -->
-    <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <!-- Мобильное меню -->
-    <nav class="menu-mobile" id="menu">
-        <button class="close-menu" id="closeMenu">&times;</button>
-        <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
-        <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
-        <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
-        <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
-    </nav>
-</header>
-
+    </header>
 
     <!-- Слайдер -->
     <section class="hero-slider">
@@ -76,8 +74,8 @@
             <!-- Слайд 2 -->
             <div class="slide" style="background-image: url('images/slider2.jpg.~.jpg');">
                 <div class="hero-content">
-                    <h1 class="trans" data-en="Nature in every detail" data-gr="Φύση σε κάθε λεπτομέρεια" data-ru="С природой в каждом элементе">С природой в каждом элементе</h1>
-                    <p class="trans" data-en="Dried flowers, minerals, essential oils — only natural." data-gr="Αποξηραμένα λουλούδια, ορυκτά, αιθέρια έλαια — μόνο φυσικά." data-ru="Сухоцветы, минералы, эфирные масла — только натуральное.">Сухоцветы, минералы, эфирные масла — только натуральное.</p>
+                    <h1 class="trans" data-en="Form, light, silence" data-gr="Μορφή, φως, σιωπή" data-ru="Форма, свет, тишина">Форма, свет, тишина</h1>
+                    <p class="trans" data-en="No flowers, no stones — only wax, hand-shaped with attention." data-gr="Όχι λουλούδια, όχι πέτρες — μόνο κερί, χειροποίητο με προσοχή." data-ru="Без цветов, без камней — только воск, вылепленный вручную.">Без цветов, без камней — только воск, вылепленный вручную.</p>
                     <a href="https://t.me/sofia_flame" class="btn trans" data-en="View in Telegram" data-gr="Δείτε στο Telegram" data-ru="Смотреть в Telegram" target="_blank">Смотреть в Telegram</a>
                 </div>
             </div>
@@ -115,58 +113,105 @@
 
     <!-- Коллекции -->
     <section class="collections animate">
-    <h2 class="section-title trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</h2>
-    <div class="collection-grid">
-        <!-- Карточка 1: Лес -->
-        <div class="collection-card">
-            <img src="images/les.jpg" alt="Коллекция Лес" class="collection-img">
-            <div class="collection-content">
-                <h3 class="trans" data-en="Forest" data-gr="Δάσος" data-ru="Лес">Лес</h3>
-                <p class="trans" data-en="The smell of pine and fir. Like a walk in the taiga." data-gr="Η μυρωδιά της πεύκης και της έλατης. Σαν μια βόλτα στην ταϊγκά." data-ru="Запах сосны и хвои. Как прогулка в тайге.">Запах сосны и хвои. Как прогулка в тайге.</p>
-                <a href="collection-forest.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+        <h2 class="section-title trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</h2>
+        <div class="collection-grid">
+            <!-- Карточка 1: Форма -->
+            <div class="collection-card">
+                <img src="images/cvety.jpg" alt="Коллекция Форма" class="collection-img">
+                <div class="collection-content">
+                    <h3 class="trans" data-en="Form" data-gr="Μορφή" data-ru="Форма">Форма</h3>
+                    <p class="trans" data-en="Sculptural lines, asymmetry, texture. Each piece is a light sculpture." data-gr="Γλυπτικές γραμμές, ασυμμετρία, υφή. Κάθε κομμάτι είναι γλυπτό φωτός." data-ru="Пластичные линии, асимметрия, текстура. Каждая свеча — скульптура из света.">Пластичные линии, асимметрия, текстура. Каждая свеча — скульптура из света.</p>
+                    <a href="collection-form.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Карточка 2: Цветы -->
-        <div class="collection-card">
-            <img src="images/cvety.jpg" alt="Коллекция Цветы" class="collection-img">
-            <div class="collection-content">
-                <h3 class="trans" data-en="Flowers" data-gr="Λουλούδια" data-ru="Цветы">Цветы</h3>
-                <p class="trans" data-en="Dried flowers inside. For a spring mood." data-gr="Αποξηραμένα λουλούδια μέσα. Για ένα εαρινό κλίμα." data-ru="Сушеные цветы внутри. Для весеннего настроения.">Сушеные цветы внутри. Для весеннего настроения.</p>
-                <a href="collection-flowers.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+            <!-- Карточка 2: Свет -->
+            <div class="collection-card">
+                <img src="images/ineral.jpg" alt="Коллекция Свет" class="collection-img">
+                <div class="collection-content">
+                    <h3 class="trans" data-en="Light" data-gr="Φως" data-ru="Свет">Свет</h3>
+                    <p class="trans" data-en="Soft glow, warm reflection, calm flame. For moments of presence." data-gr="Ήπια λάμψη, ζεστή αντανάκλαση, ήσυχη φλόγα. Για στιγμές παρουσίας." data-ru="Мягкое сияние, тёплое отражение, ровное пламя. Для моментов присутствия.">Мягкое сияние, тёплое отражение, ровное пламя. Для моментов присутствия.</p>
+                    <a href="collection-light.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+                </div>
             </div>
-        </div>
 
-        <!-- Карточка 3: Минералы -->
-        <div class="collection-card">
-            <img src="images/ineral.jpg" alt="Коллекция Минералы" class="collection-img">
-            <div class="collection-content">
-                <h3 class="trans" data-en="Minerals" data-gr="Ορυκτά" data-ru="Минералы">Минералы</h3>
-                <p class="trans" data-en="Quartz, amethyst, malachite. For energy and peace." data-gr="Χαλαζίας, αμέθυστος, μαλαχίτης. Για ενέργεια και ηρεμία." data-ru="Кварц, аметист, малахит. Для энергии и покоя.">Кварц, аметист, малахит. Для энергии и покоя.</p>
-                <a href="collection-minerals.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+            <!-- Карточка 3: Тишина -->
+            <div class="collection-card">
+                <img src="images/les.jpg" alt="Коллекция Тишина" class="collection-img">
+                <div class="collection-content">
+                    <h3 class="trans" data-en="Silence" data-gr="Σιγή" data-ru="Тишина">Тишина</h3>
+                    <p class="trans" data-en="No distractions. Only wax, fire, and breath. For meditation and focus." data-gr="Καμία απόσπαση. Μόνο κερί, φωτιά και αναπνοή. Για μετάνοια και εστίαση." data-ru="Никаких отвлечений. Только воск, огонь и дыхание. Для медитации и концентрации.">Никаких отвлечений. Только воск, огонь и дыхание. Для медитации и концентрации.</p>
+                    <a href="collection-silence.html" class="btn-small trans" data-en="Details" data-gr="Λεπτομέρειες" data-ru="Подробнее">Подробнее</a>
+                </div>
             </div>
         </div>
+    </section>
+
+    <!-- От кого? -->
+    <!-- Для кого? -->
+<section class="for-whom animate">
+    <h2 class="section-title trans" data-en="For Whom?" data-gr="Για ποιον;" data-ru="Для кого?">Для кого?</h2>
+    <div class="for-whom-content">
+        <p class="trans" data-en="For those who value silence more than noise." data-gr="Για όσους εκτιμούν περισσότερο τη σιωπή από το θόρυβο." data-ru="Для тех, кто ценит тишину больше, чем шум.">Для тех, кто ценит тишину больше, чем шум.</p>
+        <p class="trans" data-en="For those who touch fabric before buying, who notice the grain of wood, who light a candle not for light — but for presence." data-gr="Για όσους αγγίζουν το ύφασμα πριν αγοράσουν, που παρατηρούν την υφή του ξύλου, που ανάβουν κερί όχι για φως — αλλά για παρουσία." data-ru="Для тех, кто ощупывает ткань перед покупкой, кто замечает текстуру дерева, кто зажигает свечу не ради света — а ради присутствия.">Для тех, кто ощупывает ткань перед покупкой, кто замечает текстуру дерева, кто зажигает свечу не ради света — а ради присутствия.</p>
+        <p class="trans" data-en="For those who create rituals, not habits. Who seek not decoration — but meaning." data-gr="Για όσους δημιουργούν ρυθμούς, όχι συνήθειες. Που αναζητούν όχι διακόσμηση — αλλά νόημα." data-ru="Для тех, кто создаёт ритуалы, а не привычки. Кто ищет не украшение — а смысл.">Для тех, кто создаёт ритуалы, а не привычки. Кто ищет не украшение — а смысл.</p>
+        <p class="trans" data-en="This candle is for you." data-gr="Αυτό το κερί είναι για σένα." data-ru="Эта свеча — для тебя.">Эта свеча — для тебя.</p>
     </div>
 </section>
 
-    <!-- Процесс -->
-    <section class="process animate">
-        <h2 class="trans" data-en="How it's made" data-gr="Πώς γίνεται" data-ru="Как это делается">Как это делается</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-icon">🕯️</div>
-                <h3 class="trans" data-en="Pouring" data-gr="Χύσιμο" data-ru="Отливка">Отливка</h3>
-                <p class="trans" data-en="Wax is melted and poured into a mold by hand." data-gr="Το κερί λιώνει και χύνεται σε καλούπι με το χέρι." data-ru="Воск растапливается и заливается в форму вручную.">Воск растапливается и заливается в форму вручную.</p>
+    <!-- Отзывы -->
+    <section class="reviews animate">
+        <h2 class="section-title trans" data-en="Reviews" data-gr="Κριτικές" data-ru="Отзывы">Отзывы</h2>
+        <div class="reviews-grid">
+            <!-- Отзыв 1 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar 2.jpg" alt="Алёна" class="review-avatar">
+                    <div>
+                        <h4>Алёна</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="trans" 
+                   data-en="The candle smells incredible, and the texture of the wax is so smooth. I light it every evening — it's my ritual now." 
+                   data-gr="Το κερί μυρίζει απίστευτα, και η υφή του κεριού είναι τόσο λεία. Το ανάβω κάθε βράδυ — είναι το ρυθμό μου τώρα." 
+                   data-ru="Свеча пахнет невероятно, а текстура воска — просто гладкая. Зажигаю каждый вечер — это мой ритуал.">
+                    Свеча пахнет невероятно, а текстура воска — просто гладкая. Зажигаю каждый вечер — это мой ритуал.
+                </p>
             </div>
-            <div class="step">
-                <div class="step-icon">🌿</div>
-                <h3 class="trans" data-en="Aroma" data-gr="Αρωματισμός" data-ru="Аромат">Аромат</h3>
-                <p class="trans" data-en="Essential oils without synthetics are added." data-gr="Προστίθενται αιθέρια έλαια χωρίς συνθετικές ουσίες." data-ru="Добавляются эфирные масла без синтетики.">Добавляются эфирные масла без синтетики.</p>
+
+            <!-- Отзыв 2 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar 2.jpg" alt="Марина" class="review-avatar">
+                    <div>
+                        <h4>Марина</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="trans" 
+                   data-en="I ordered the 'Form' collection. The shape calms me so much. Beautiful packaging — I even saved the box!" 
+                   data-gr="Παρήγγειλα τη συλλογή 'Μορφή'. Η μορφή με ηρεμεί τόσο πολύ. Όμορφη συσκευασία — κράτησα ακόμα και το κουτί!" 
+                   data-ru="Заказала коллекцию «Форма». Сама форма меня успокаивает. Красивая упаковка — коробку даже сохранила!">
+                    Заказала коллекцию «Форма». Сама форма меня успокаивает. Красивая упаковка — коробку даже сохранила!
+                </p>
             </div>
-            <div class="step">
-                <div class="step-icon">🪨</div>
-                <h3 class="trans" data-en="Decoration" data-gr="Διακόσμηση" data-ru="Декор">Декор</h3>
-                <p class="trans" data-en="Minerals, dried flowers, textures — everything by hand." data-gr="Ορυκτά, αποξηραμένα λουλούδια, υφές — όλα χειροποίητα." data-ru="Минералы, сухоцветы, текстуры — всё вручную.">Минералы, сухоцветы, текстуры — всё вручную.</p>
+
+            <!-- Отзыв 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="images/avatar 2.jpg" alt="Диана" class="review-avatar">
+                    <div>
+                        <h4>Диана</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="trans" 
+                   data-en="The candle from the 'Silence' collection is now on my workspace. It adds focus and looks like a piece of art. Thank you!" 
+                   data-gr="Το κερί από τη συλλογή 'Σιγή' είναι τώρα στον χώρο εργασίας μου. Δίνει εστίαση και μοιάζει με έργο τέχνης. Ευχαριστώ!" 
+                   data-ru="Свеча из коллекции «Тишина» теперь на моём рабочем столе. Добавляет концентрации и выглядит как произведение искусства. Спасибо!">
+                    Свеча из коллекции «Тишина» теперь на моём рабочем столе. Добавляет концентрации и выглядит как произведение искусства. Спасибо!
+                </p>
             </div>
         </div>
     </section>
@@ -179,7 +224,7 @@
             <a href="https://t.me/sofia_flame" target="_blank" class="trans" data-en="Telegram" data-gr="Telegram" data-ru="Telegram">Telegram</a>
             <a href="https://wa.me/79991234567" target="_blank" class="trans" data-en="WhatsApp" data-gr="WhatsApp" data-ru="WhatsApp">WhatsApp</a>
         </div>
-        <p style="margin-top: 30px; font-size: 14px; color: #777;" class="trans" data-en="© 2026 Korol S.V. All candles are handmade." data-gr="©  2026 Korol S.V. Όλα τα κεριά είναι χειροποίητα." data-ru="© 2026 Korol S.V. Все свечи — ручная работа.">© 2026 Korol S.V. Все свечи — ручная работа.</p>
+        <p style="margin-top: 30px; font-size: 14px; color: #777;" class="trans" data-en="© 2026 Korol S.V. All candles are handmade." data-gr="© 2026 Korol S.V. Όλα τα κεριά είναι χειροποίητα." data-ru="© 2026 Korol S.V. Все свечи — ручная работа.">© 2026 Korol S.V. Все свечи — ручная работа.</p>
     </footer>
 
     <!-- Подключаем скрипт -->
