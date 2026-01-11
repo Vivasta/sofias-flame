@@ -1,4 +1,4 @@
-/* === Базовые стили === */
+/* === Обнуление === */
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Lora', serif;
+    line-height: 1.6;
     color: #1E1E1E;
-    line-height: 1.8;
-    background-color: #FDFBF9;
+    background: #FDFBF9;
     overflow-x: hidden;
 }
 
@@ -17,51 +17,85 @@ body {
 .header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 20px 40px;
+    background: white;
+    padding: 15px 5%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     z-index: 1000;
-    background: rgba(253, 251, 249, 0.8);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(200, 165, 148, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
 .header.scrolled {
-    background: rgba(253, 251, 249, 0.95);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 10px 5%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #1E1E1E;
+/* === Логотип === */
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
+    color: #1E1E1E;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #1E1E1E;
+    text-align: center;
 }
 
 /* === Десктопное меню === */
 .menu {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .menu a {
     text-decoration: none;
-    color: #C8A594;
-    font-size: 15px;
-    font-weight: 500;
+    color: #1E1E1E;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.menu a:hover,
-.menu a.active {
-    color: #E8C4B8;
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #C8A594;
+    transition: width 0.3s ease;
 }
 
-/* === Кнопка выбора языка (одна) === */
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a.active {
+    color: #C8A594;
+}
+
+/* === Кнопка выбора языка === */
 .language-selector {
     position: relative;
     display: inline-block;
@@ -88,7 +122,6 @@ body {
     color: white;
 }
 
-/* === Выпадающее меню языков === */
 .lang-dropdown {
     position: absolute;
     top: 100%;
@@ -136,131 +169,127 @@ body {
 .burger {
     display: none;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
     cursor: pointer;
-    z-index: 1000;
+    padding: 5px;
 }
 
 .burger span {
-    display: block;
+    width: 25px;
     height: 3px;
-    width: 100%;
-    background-color: #1E1E1E;
-    border-radius: 2px;
+    background: #1E1E1E;
+    margin: 3px 0;
     transition: all 0.3s ease;
-}
-
-.burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-.burger.active span:nth-child(2) {
-    opacity: 0;
-}
-.burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    border-radius: 2px;
 }
 
 /* === Мобильное меню === */
 .menu-mobile {
     position: fixed;
     top: 0;
-    left: -100%;
-    width: 100%;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
     height: 100vh;
-    background-color: #FDFBF9;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 120px;
-    gap: 40px;
-    transition: left 0.4s ease;
-    z-index: 1500;
+    background: white;
+    padding: 80px 30px 30px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+    z-index: 1001;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.menu-mobile::-webkit-scrollbar {
-    display: none;
-}
-
-.menu-mobile a {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    color: #1E1E1E;
-    text-decoration: none;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.5s ease;
 }
 
 .menu-mobile.open {
-    left: 0;
+    right: 0;
 }
 
-.menu-mobile.open a {
-    opacity: 1;
-    transform: translateY(0);
+.menu-mobile a {
+    display: block;
+    color: #1E1E1E;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    transition: color 0.3s ease;
+}
+
+.menu-mobile a:hover {
+    color: #C8A594;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #1E1E1E;
+    cursor: pointer;
+    z-index: 10;
 }
 
 /* === Адаптивность === */
 @media (max-width: 768px) {
-    .header {
-        padding: 0 20px;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        padding-top: 20px;
-        position: relative;
-    }
-
-    .logo {
-        order: 1;
-        margin-top: 5px;
-    }
-
+    /* Скрываем десктопное меню */
     .menu {
         display: none;
-        order: 2;
     }
 
-    .language-selector {
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        z-index: 1001;
-        margin-left: 0;
-    }
-
+    /* Показываем бургер */
     .burger {
         display: flex;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
     }
 
-    .menu-mobile {
-        padding-top: 180px;
+    /* Логотип на мобильных */
+    .logo-text {
+        font-size: 14px;
+    }
+
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 4px;
+    }
+
+    .header {
+        padding: 15px 20px;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .lang-toggle {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+    .logo-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text {
+        font-size: 13px;
     }
 }
 
 /* === Слайдер === */
 .hero-slider {
-    height: 70vh;
-    max-height: 600px;
-    min-height: 400px;
+    margin-top: 80px;
     position: relative;
+    height: 80vh;
     overflow: hidden;
-    margin-bottom: 70px;
 }
 
 .slides {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
 .slide {
@@ -272,11 +301,10 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1.2s ease-in-out;
+    transition: opacity 1s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .slide.active {
@@ -284,124 +312,126 @@ body {
 }
 
 .hero-content {
-    max-width: 700px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    max-width: 800px;
     padding: 20px;
-    color: #1E1E1E;
+    animation: fadeIn 1s ease;
 }
 
 .hero-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    line-height: 1.3;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 17px;
-    color: #C8A594;
-    margin-bottom: 26px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .btn {
     display: inline-block;
-    padding: 11px 26px;
-    background: #E8C4B8;
+    background: #C8A594;
     color: white;
+    padding: 12px 30px;
     text-decoration: none;
     border-radius: 6px;
     font-family: 'Lora', serif;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background: #C8A594;
-    transform: translateY(-2px);
+    background: #b69483;
 }
 
-/* === Индикаторы слайдера === */
+/* Точки слайдера */
 .slider-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 3;
+    z-index: 10;
 }
 
 .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255,255,255,0.4);
     cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.7;
+    transition: background 0.3s ease;
 }
 
-.dot:hover,
-.dot.active {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.15);
+.dot.active,
+.dot:hover {
+    background: white;
+}
+
+/* === Анимация при прокрутке === */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.show {
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* === О бренде === */
 .about {
-    padding: 100px 40px;
+    padding: 100px 5%;
     display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
 }
 
 .about-img {
     flex: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    min-width: 300px;
 }
 
 .about-img img {
     width: 100%;
-    height: auto;
-    display: block;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .about-text {
     flex: 1;
+    min-width: 300px;
 }
 
 .about-text h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: #1E1E1E;
+    font-size: 2.2rem;
     margin-bottom: 20px;
+    color: #1E1E1E;
 }
 
 .about-text p {
-    font-size: 16px;
-    color: #555;
     margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* === Коллекции === */
 .collections {
-    padding: 100px 40px;
+    padding: 100px 5%;
     text-align: center;
-    background-color: #FFF9F5;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     color: #1E1E1E;
-    margin-bottom: 60px;
 }
 
 .collection-grid {
@@ -413,203 +443,127 @@ body {
 }
 
 .collection-item {
+    position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
 .collection-item:hover {
-    transform: translateY(-6px);
+    transform: translateY(-10px);
 }
 
 .collection-img {
-    height: 300px;
     width: 100%;
+    height: 300px;
     object-fit: cover;
 }
 
 .collection-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    background: white;
+    text-align: left;
 }
 
 .collection-info h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 1.4rem;
     margin-bottom: 8px;
     color: #1E1E1E;
 }
 
-.collection-info p {
-    font-size: 15px;
-    color: #C8A594;
-}
-
 /* === Процесс === */
 .process {
-    padding: 100px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 100px 5%;
+    background: #F8F4F2;
     text-align: center;
 }
 
 .process h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: #1E1E1E;
+    font-size: 2.5rem;
     margin-bottom: 50px;
+    color: #1E1E1E;
 }
 
 .steps {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .step {
     flex: 1;
-    min-width: 200px;
-    padding: 20px;
+    min-width: 250px;
+    max-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .step-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
 .step h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     color: #1E1E1E;
 }
 
 /* === Футер === */
 .footer {
-    padding: 80px 40px 40px;
+    padding: 60px 5%;
     text-align: center;
-    background: #F5E8DC;
-    color: #1E1E1E;
+    background: #1E1E1E;
+    color: white;
 }
 
 .footer h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
 .footer p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.social-links {
+    margin: 30px 0;
 }
 
 .social-links a {
     margin: 0 15px;
-    color: #C8A594;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #E8C4B8;
+    color: #C8A594;
 }
 
-/* === Анимация при скролле === */
-.animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+/* === Анимации === */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.animate.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* === Кнопка "Закрыть" в мобильном меню === */
-.close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 40px;
-    color: #1E1E1E;
-    cursor: pointer;
-    opacity: 0.8;
-    z-index: 2000;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.close-menu:hover {
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
-/* На маленьких экранах — чуть меньше */
-@media (max-width: 480px) {
-    .close-menu {
-        font-size: 36px;
-        top: 15px;
-        right: 15px;
-    }
-}
-/* === Логотип в шапке === */
-.logo-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #1E1E1E;
-}
-
-.logo-img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 6px;
-}
-
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #1E1E1E;
-    text-align: center;
-}
-
-/* На мобильных — логотип крупнее, текст под ним */
-@media (max-width: 768px) {
-    .logo-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .logo-img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 4px;
-    }
-    .logo-text {
-        font-size: 14px;
-        display: block;
-    }
-}
-
-/* На десктопе — убираем текст рядом с логотипом, оставляем только под ним */
-.header .menu {
-    display: flex;
-    align-items: center;
-}
-
-/* Убираем старый текст из меню — он теперь в логотипе */
-.header .logo {
-    display: none;
+/* === Общее === */
+a {
+    transition: color 0.3s ease;
 }
