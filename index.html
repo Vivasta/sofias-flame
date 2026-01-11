@@ -15,32 +15,46 @@
 
     <!-- Хедер -->
     <header class="header">
-        <!-- Логотип -->
-        <a href="#" class="logo">Sofia Flame</a>
+    <!-- Логотип -->
+    <a href="#" class="logo">Sofia Flame</a>
 
-        <!-- Десктопное меню -->
-        <nav class="menu">
-            <a href="#" class="active">Главная</a>
-            <a href="#">Коллекции</a>
-            <a href="#">О бренде</a>
-            <a href="#">Контакт</a>
-        </nav>
+    <!-- Десктопное меню -->
+    <nav class="menu">
+        <a href="#" class="active">Главная</a>
+        <a href="#">Коллекции</a>
+        <a href="#">О бренде</a>
+        <a href="#">Контакты</a>
+    </nav>
 
-        <!-- Бургер-иконка -->
-        <div class="burger" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Кнопка выбора языка (одна) -->
+    <div class="language-selector">
+        <button id="lang-toggle" class="lang-toggle">🇷🇺</button>
+        <div id="lang-dropdown" class="lang-dropdown">
+            <button data-lang="ru">🇷🇺 Русский</button>
+            <button data-lang="en">🇬🇧 English</button>
+            <button data-lang="gr">🇬🇷 Ελληνικά</button>
         </div>
+    </div>
 
-        <!-- Мобильное меню -->
-        <nav class="menu-mobile" id="menu">
-            <a href="#" class="active">Главная</a>
-            <a href="#">Коллекции</a>
-            <a href="#">О бренде</a>
-            <a href="#">Контакты</a>
-        </nav>
-    </header>
+    <!-- Бургер-иконка -->
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Мобильное меню -->
+    <nav class="menu-mobile" id="menu">
+    <!-- Кнопка закрытия -->
+    <button class="close-menu" id="closeMenu">&times;</button>
+
+    <!-- Меню -->
+    <a href="#" class="active">Главная</a>
+    <a href="#">Коллекции</a>
+    <a href="#">О бренде</a>
+    <a href="#">Контакты</a>
+</nav>
+</header>
 
     <!-- Слайдер -->
     <section class="hero-slider">

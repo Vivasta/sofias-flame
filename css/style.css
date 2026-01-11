@@ -61,6 +61,77 @@ body {
     color: #E8C4B8;
 }
 
+/* === Кнопка выбора языка (одна) === */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.lang-toggle {
+    background: none;
+    border: 1px solid #C8A594;
+    color: #C8A594;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Lora', serif;
+}
+
+.lang-toggle:hover {
+    background-color: #C8A594;
+    color: white;
+}
+
+/* === Выпадающее меню языков === */
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid #E8C4B8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1002;
+    min-width: 140px;
+}
+
+.lang-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    color: #1E1E1E;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.lang-dropdown button:hover {
+    background-color: #FDFBF9;
+    color: #C8A594;
+}
+
 /* === Бургер-иконка === */
 .burger {
     display: none;
@@ -69,7 +140,7 @@ body {
     width: 30px;
     height: 21px;
     cursor: pointer;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 .burger span {
@@ -137,11 +208,42 @@ body {
 
 /* === Адаптивность === */
 @media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        position: relative;
+    }
+
+    .logo {
+        order: 1;
+        margin-top: 5px;
+    }
+
     .menu {
         display: none;
+        order: 2;
     }
+
+    .language-selector {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        z-index: 1001;
+        margin-left: 0;
+    }
+
     .burger {
         display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-mobile {
+        padding-top: 180px;
     }
 }
 
@@ -185,12 +287,6 @@ body {
     max-width: 700px;
     padding: 20px;
     color: #1E1E1E;
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.slide.active .hero-content {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .hero-content h1 {
@@ -431,4 +527,37 @@ body {
 .animate.show {
     opacity: 1;
     transform: translateY(0);
+}
+/* === Кнопка "Закрыть" в мобильном меню === */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: #1E1E1E;
+    cursor: pointer;
+    opacity: 0.8;
+    z-index: 2000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.close-menu:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/* На маленьких экранах — чуть меньше */
+@media (max-width: 480px) {
+    .close-menu {
+        font-size: 36px;
+        top: 15px;
+        right: 15px;
+    }
 }

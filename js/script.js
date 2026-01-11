@@ -77,20 +77,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // =============== 4. Бургер-меню ===============
+    // =============== 4. Бургер-меню с крестиком ===============
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('menu');
+    const closeMenu = document.getElementById('closeMenu');
 
     if (burger && mobileMenu) {
+        // Открыть меню
         burger.addEventListener('click', () => {
-            const isOpen = burger.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
+            mobileMenu.classList.add('open');
+            burger.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-            // Блокировка скролла
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+        // Закрыть по крестику
+        if (closeMenu) {
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Закрыть по клику на ссылку
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Закрыть по клику на фон (вне пунктов меню)
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('open');
+                burger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     } else {
         console.warn('Бургер или меню не найдены — проверь id="burger" и id="menu"');
+    }
+
+    // =============== 5. Перевод на языки (одна кнопка с дропдауном) ===============
+    const langToggle = document.getElementById('lang-toggle');
+    const langDropdown = document.getElementById('lang-dropdown');
+    const langButtons = document.querySelectorAll('#lang-dropdown button');
+    const defaultLang = 'ru';
+
+    // Открывать/закрывать дропдаун
+    if (langToggle && langDropdown) {
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('active');
+        });
+
+        // Закрыть при клике вне
+        document.addEventListener('click', (e) => {
+            if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('active');
+            }
+        });
+
+        // Установка языка
+        function setLanguage(lang) {
+            document.querySelectorAll('.trans').forEach(el => {
+                const translation = el.getAttribute(`data-${lang}`);
+                if (translation) {
+                    el.textContent = translation;
+                }
+            });
+
+            // Обновляем иконку кнопки
+            const flag = { ru: '🇷🇺', en: '🇬🇧', gr: '🇬🇷' }[lang] || '🇷🇺';
+            langToggle.innerHTML = flag;
+
+            // Сохраняем
+            localStorage.setItem('language', lang);
+            langDropdown.classList.remove('active');
+        }
+
+        // Клик по языку
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        // Восстановить язык при загрузке
+        const savedLang = localStorage.getItem('language') || defaultLang;
+        setLanguage(savedLang);
     }
 
     console.log('✅ script.js — полностью загружен и работает');
