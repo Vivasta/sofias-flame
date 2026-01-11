@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* === Хедер — логотип + меню в строке по центру, язык справа === */
+/* === Хедер === */
 .header {
     position: fixed;
     top: 0;
@@ -34,7 +34,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* === Центральная группа: логотип + меню — в строке === */
+/* Центр: логотип + меню */
 .header-center {
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ body {
     z-index: 1;
 }
 
-/* === Логотип === */
+/* Логотип */
 .logo-wrapper {
     display: flex;
     flex-direction: column;
@@ -70,7 +70,7 @@ body {
     color: #1E1E1E;
 }
 
-/* === Десктопное меню === */
+/* Меню */
 .menu {
     display: flex;
     gap: 24px;
@@ -105,9 +105,9 @@ body {
     color: #C8A594;
 }
 
-/* === Кнопка выбора языка — строго справа === */
+/* Язык */
 .language-selector {
-    margin-left: auto; /* выталкивает вправо */
+    margin-left: auto;
     position: relative;
     z-index: 1002;
 }
@@ -175,7 +175,7 @@ body {
     color: #C8A594;
 }
 
-/* === Бургер-иконка === */
+/* Бургер */
 .burger {
     display: none;
     flex-direction: column;
@@ -192,7 +192,7 @@ body {
     border-radius: 2px;
 }
 
-/* === Мобильное меню === */
+/* Мобильное меню */
 .menu-mobile {
     position: fixed;
     top: 0;
@@ -239,7 +239,7 @@ body {
     z-index: 10;
 }
 
-/* === Адаптивность === */
+/* Адаптив */
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -498,7 +498,7 @@ body {
     background: #b69483;
 }
 
-/* Адаптивность */
+/* Адаптив коллекций */
 @media (max-width: 768px) {
     .collection-content h3 {
         font-size: 1.3rem;
@@ -509,6 +509,75 @@ body {
     .btn-small {
         font-size: 0.95rem;
         padding: 9px 20px;
+    }
+}
+
+/* === Для кого? === */
+.for-whom {
+    padding: 100px 5%;
+    text-align: center;
+    background: linear-gradient(to bottom, #FDF7F4, #F8F4F2);
+    border-top: 1px solid #ECE0DC;
+    border-bottom: 1px solid #ECE0DC;
+    position: relative;
+    overflow: hidden;
+}
+
+.for-whom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #C8A594;
+    border-radius: 2px;
+    margin-top: 30px;
+}
+
+.for-whom-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    padding: 20px;
+}
+
+.for-whom-content p {
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+.for-whom .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #1E1E1E;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.for-whom .section-title::after {
+    content: "🕯️";
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+/* Адаптив "Для кого?" */
+@media (max-width: 768px) {
+    .for-whom {
+        padding: 60px 5%;
+    }
+    .for-whom .section-title {
+        font-size: 2rem;
+    }
+    .for-whom-content {
+        font-size: 1rem;
+        padding: 10px;
     }
 }
 
@@ -576,7 +645,6 @@ body {
     margin: 0;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .review-header {
         gap: 10px;
@@ -634,103 +702,7 @@ body {
     to { opacity: 1; }
 }
 
-/* === От Кого? — эмоциональный продающий блок === */
-.from-whom {
-    padding: 100px 5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    background: #FDF7F4;
-    border-top: 1px solid #ECE0DC;
-    border-bottom: 1px solid #ECE0DC;
-}
-
-.from-whom-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.from-whom-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    color: #1E1E1E;
-    margin-bottom: 30px;
-}
-
-.from-whom-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 20px;
-}
-
-.from-whom-image {
-    flex: 1;
-    min-width: 300px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.from-whom-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .from-whom {
-        text-align: center;
-        flex-direction: column;
-    }
-    .from-whom-content,
-    .from-whom-image {
-        text-align: center;
-    }
-    .from-whom-content h2 {
-        font-size: 2rem;
-    }
-}
-/* === Для кого? — философский, вовлекающий блок === */
-.for-whom {
-    padding: 100px 5%;
-    text-align: center;
-    background: #FDF7F4;
-    border-top: 1px solid #ECE0DC;
-    border-bottom: 1px solid #ECE0DC;
-}
-
-.for-whom-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-}
-
-.for-whom-content p {
-    margin-bottom: 20px;
-}
-
-.for-whom .section-title {
-    font-size: 2.4rem;
-    color: #1E1E1E;
-    margin-bottom: 40px;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .for-whom {
-        padding: 60px 5%;
-    }
-    .for-whom .section-title {
-        font-size: 2rem;
-    }
-    .for-whom-content {
-        font-size: 1rem;
-    }
+/* === Общее === */
+a {
+    transition: color 0.3s ease;
 }
