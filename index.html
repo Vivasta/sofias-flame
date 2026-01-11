@@ -14,50 +14,52 @@
 <body>
 
     <!-- Хедер -->
-    <header class="header">
+    <!-- Хедер -->
+<header class="header">
+    <!-- Центр: логотип + меню в строке -->
+    <div class="header-center">
         <!-- Логотип -->
         <a href="#" class="logo-wrapper">
             <img src="images/logo1.png" alt="Sofia Flame" class="logo-img">
-            <span class="logo-text">Sofia Flame</span>
+            <span class="logo-text">Sofia's Flame</span>
         </a>
 
-        <!-- Десктопное меню -->
+        <!-- Меню -->
         <nav class="menu">
             <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
             <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
             <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
             <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
         </nav>
+    </div>
 
-        <!-- Кнопка выбора языка (одна) -->
-        <div class="language-selector">
-            <button id="lang-toggle" class="lang-toggle">🇷🇺</button>
-            <div id="lang-dropdown" class="lang-dropdown">
-                <button data-lang="ru">🇷🇺 Русский</button>
-                <button data-lang="en">🇬🇧 English</button>
-                <button data-lang="gr">🇬🇷 Ελληνικά</button>
-            </div>
+    <!-- Кнопка языка — уедет вправо -->
+    <div class="language-selector">
+        <button id="lang-toggle" class="lang-toggle">🇷🇺</button>
+        <div id="lang-dropdown" class="lang-dropdown">
+            <button data-lang="ru">🇷🇺 Русский</button>
+            <button data-lang="en">🇬🇧 English</button>
+            <button data-lang="gr">🇬🇷 Ελληνικά</button>
         </div>
+    </div>
 
-        <!-- Бургер-иконка -->
-        <div class="burger" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <!-- Бургер -->
+    <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-        <!-- Мобильное меню -->
-        <nav class="menu-mobile" id="menu">
-            <!-- Кнопка закрытия -->
-            <button class="close-menu" id="closeMenu">&times;</button>
+    <!-- Мобильное меню -->
+    <nav class="menu-mobile" id="menu">
+        <button class="close-menu" id="closeMenu">&times;</button>
+        <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
+        <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
+        <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
+        <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
+    </nav>
+</header>
 
-            <!-- Меню -->
-            <a href="#" class="active trans" data-en="Home" data-gr="Αρχική" data-ru="Главная">Главная</a>
-            <a href="#" class="trans" data-en="Collections" data-gr="Συλλογές" data-ru="Коллекции">Коллекции</a>
-            <a href="#" class="trans" data-en="About" data-gr="Σχετικά" data-ru="О бренде">О бренде</a>
-            <a href="#" class="trans" data-en="Contacts" data-gr="Επικοινωνία" data-ru="Контакты">Контакты</a>
-        </nav>
-    </header>
 
     <!-- Слайдер -->
     <section class="hero-slider">
