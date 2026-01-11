@@ -567,3 +567,82 @@ body {
 a {
     transition: color 0.3s ease;
 }
+/* === Коллекции — обновлённые карточки === */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.collection-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.collection-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.collection-content {
+    padding: 24px;
+    text-align: center;
+}
+
+.collection-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #1E1E1E;
+    margin-bottom: 12px;
+}
+
+.collection-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn-small {
+    display: inline-block;
+    background: #C8A594;
+    color: white;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-small:hover {
+    background: #b69483;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .collection-content h3 {
+        font-size: 1.3rem;
+    }
+    .collection-content p {
+        font-size: 0.95rem;
+    }
+    .btn-small {
+        font-size: 0.95rem;
+        padding: 9px 20px;
+    }
+}
