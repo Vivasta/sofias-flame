@@ -120,56 +120,61 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('Бургер или меню не найдены — проверь id="burger" и id="menu"');
     }
 
-    // =============== 5. Перевод на языки (одна кнопка с дропдауном) ===============
+    // =============== 5. Перевод на языки ===============
     const langToggle = document.getElementById('lang-toggle');
     const langDropdown = document.getElementById('lang-dropdown');
     const langButtons = document.querySelectorAll('#lang-dropdown button');
-    const defaultLang = 'ru';
 
-    // Открывать/закрывать дропдаун
-    if (langToggle && langDropdown) {
-        langToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.toggle('active');
-        });
+    // Проверим, найдены ли элементы
+    if (!langToggle || !langDropdown) {
+        console.error('❌ Элементы выбора языка не найдены. Проверь id="lang-toggle" и id="lang-dropdown"');
+        return;
+    }
 
-        // Закрыть при клике вне
-        document.addEventListener('click', (e) => {
-            if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
-                langDropdown.classList.remove('active');
+    // Установка языка
+    function setLanguage(lang) {
+        document.querySelectorAll('.trans').forEach(el => {
+            const translation = el.getAttribute(`data-${lang}`);
+            if (translation) {
+                el.textContent = translation;
             }
         });
 
-        // Установка языка
-        function setLanguage(lang) {
-            document.querySelectorAll('.trans').forEach(el => {
-                const translation = el.getAttribute(`data-${lang}`);
-                if (translation) {
-                    el.textContent = translation;
-                }
-            });
+        // Обновляем флаг на кнопке
+        const flag = { ru: '🇷🇺', en: '🇬🇧', gr: '🇬🇷' }[lang] || '🇷🇺';
+        langToggle.innerHTML = flag;
 
-            // Обновляем иконку кнопки
-            const flag = { ru: '🇷🇺', en: '🇬🇧', gr: '🇬🇷' }[lang] || '🇷🇺';
-            langToggle.innerHTML = flag;
-
-            // Сохраняем
-            localStorage.setItem('language', lang);
-            langDropdown.classList.remove('active');
-        }
-
-        // Клик по языку
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
-                setLanguage(lang);
-            });
-        });
-
-        // Восстановить язык при загрузке
-        const savedLang = localStorage.getItem('language') || defaultLang;
-        setLanguage(savedLang);
+        // Сохраняем язык
+        localStorage.setItem('language', lang);
+        // Закрываем дропдаун
+        langDropdown.classList.remove('active');
     }
 
-    console.log('✅ script.js — полностью загружен и работает');
+    // Открыть/закрыть дропдаун
+    langToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('active');
+    });
+
+    // Закрыть при клике вне
+    document.addEventListener('click', (e) => {
+        if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+            langDropdown.classList.remove('active');
+        }
+    });
+
+    // Обработка клика по кнопке языка
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            console.log('Выбран язык:', lang);
+            setLanguage(lang);
+        });
+    });
+
+    // Восстановить язык при загрузке
+    const savedLang = localStorage.getItem('language') || 'ru';
+    setLanguage(savedLang);
+
+    console.log('✅ Перевод, меню, слайдер — всё работает');
 });
